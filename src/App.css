@@ -1,38 +1,186 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.container-general {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.borders {
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 2px solid white;
+  border-radius: 15px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.container-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90vw;
+}
+.container-img {
+  height: 35rem;
+  width: 40rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img {
+  width: 90%;
+  max-height: 35rem;
+  border-radius: 15px;
+  border: white 1px solid;
+}
+
+p {
+  width: 40rem;
+}
+
+.container-title {
+  margin: 2rem 0 0 0;
+  font-size: 2rem;
+  font-weight: bolder;
+  color: black;
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff,
+    -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+
+.button-general {
+  background-color: transparent;
+  color: white;
+  border: 0.1rem solid white;
+  border-radius: 0.4rem;
+  transition: all 0.3s ease;
+  padding: 0.4rem;
+  margin: 1rem 0.5rem;
+}
+
+.button-general:hover {
+  color: black;
+  background-color: white;
+}
+
+.button-menu {
+  display: flex;
+  flex-direction: column;
+  width: 2.5rem;
+  height: 2rem;
+  border: 0;
+  background: transparent;
+  gap: 0.5rem;
+  z-index: 99;
+}
+
+.button-menu > div {
+  background-color: white;
+  height: 2px;
+  width: 100%;
+  border-radius: 5px;
+  transition: all 0.5s;
+  transform-origin: left;
+}
+
+.button-menu:hover div:first-child {
+  transform: rotate(45deg);
+}
+.button-menu:hover div:nth-child(2) {
+  opacity: 0;
+}
+.button-menu:hover div:last-child {
+  transform: rotate(-45deg);
+}
+
+.button-menu2 {
+  display: flex;
+  flex-direction: column;
+  width: 2.5rem;
+  height: 2rem;
+  border: 0;
+  background: transparent;
+  gap: 0.5rem;
+}
+
+.button-menu2 > div {
+  background-color: white;
+  height: 2px;
+  width: 100%;
+  border-radius: 5px;
+  transition: all 0.5s;
+  transform-origin: left;
+}
+
+.button-menu2 div:first-child {
+  transform: rotate(45deg);
+}
+.button-menu2 div:nth-child(2) {
+  opacity: 0;
+}
+.button-menu2 div:last-child {
+  transform: rotate(-45deg);
+}
+
+.nav-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  width: 100%;
+  color: white;
+  border: white 1px solid;
+  height: 4rem;
+  font-size: 1.2rem;
+  transition: all ease 0.4s;
+}
+
+.nav-button:hover {
+  color: black;
+  background-color: white;
+}
+
+@media (max-width: 992px) {
+  .container-media {
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+  .container-general {
+    top: 6rem;
+  }
+  .container-img {
+    height: 100%;
+  }
+  .img {
+    height: 10rem;
+    width: 20rem;
+  }
+  p {
+    align-self: center;
+    width: 100%;
+  }
+  .container-text {
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .container-general {
+    top: 18rem;
+    width: 90%;
+  }
+}
+@media (max-width: 768px) {
+  .container-general {
+    top: 19rem;
+    width: 90%;
   }
 }
