@@ -1,0 +1,40 @@
+.img-card {
+  width: 16rem;
+  height: 10rem;
+  transition: all ease 0.4s;
+}
+
+.container-img-list:hover .img-card {
+  filter: brightness(0.2);
+}
+
+.container-img-list:hover .text-inside {
+  opacity: 1;
+}
+.container-img-list {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  transition: all ease 0.4s;
+  text-decoration: none;
+  flex: 1 0 0;
+}
+
+.text-inside {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  opacity: 0;
+  transition: all ease 0.4s;
+  color: white;
+}
+
+.searcher {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

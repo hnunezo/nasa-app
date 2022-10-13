@@ -1,17 +1,30 @@
 import React, { useState } from "react";
 import { Offcanvas } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { changeLoading } from "../../states/page";
 
 const OffCanvas = () => {
   const [show, setShow] = useState(false);
-
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const changeUrl = (link) => {
+    dispatch(changeLoading(true));
+    navigate(`${link}`);
+  };
 
   return (
     <>
       <button
-        className={show ? "button-menu2" : "button-menu"}
-        style={{ position: "absolute", right: "1rem", top: "1rem" }}
+        className={show ? "button-menu2" : "button-menu d-flex"}
+        style={{
+          position: "absolute",
+          right: "1rem",
+          top: "1rem",
+        }}
         onClick={handleShow}
       >
         <div></div>
@@ -30,13 +43,28 @@ const OffCanvas = () => {
         }}
       >
         <Offcanvas.Header>
-          <Offcanvas.Title>Menu </Offcanvas.Title>
+          <Offcanvas.Title>Menu</Offcanvas.Title>
+          <button
+            className="button-menu2"
+            style={{ position: "absolute", right: "1rem", top: "1rem" }}
+            onClick={() => handleClose()}
+          >
+            <div></div>
+            <div></div>
+            <div></div>
+          </button>
         </Offcanvas.Header>
         <Offcanvas.Body style={{ width: "100%" }}>
           <div className="d-flex flex-column">
-            <button className="nav-button">Home</button>
-            <button className="nav-button">Pictures</button>
-            <button className="nav-button">Gallery</button>
+            <button className="nav-button" onClick={() => changeUrl("/")}>
+              Home
+            </button>
+            <button className="nav-button" onClick={() => changeUrl("/daily")}>
+              Random
+            </button>
+            <button className="nav-button" onClick={() => changeUrl("/search")}>
+              Searcher
+            </button>
           </div>
         </Offcanvas.Body>
       </Offcanvas>
