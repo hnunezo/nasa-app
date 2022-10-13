@@ -3,6 +3,7 @@ import { Offcanvas } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { changeLoading } from "../../states/page";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const OffCanvas = () => {
   const [show, setShow] = useState(false);
@@ -43,7 +44,11 @@ const OffCanvas = () => {
         }}
       >
         <Offcanvas.Header>
-          <Offcanvas.Title>Menu</Offcanvas.Title>
+          <img
+            src={require("../../assets/img/logo.jpg")}
+            alt={"logo.jpg"}
+            style={{ width: "10rem" }}
+          />
           <button
             className="button-menu2"
             style={{ position: "absolute", right: "1rem", top: "1rem" }}
@@ -65,6 +70,24 @@ const OffCanvas = () => {
             <button className="nav-button" onClick={() => changeUrl("/search")}>
               Searcher
             </button>
+          </div>
+          <div className="links">
+            <a
+              href="https://github.com/hnunezo/nasa-app"
+              target={"_blank"}
+              rel="noreferrer"
+              className="logo"
+            >
+              <FaGithub size={50} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/hector-nuñez-oviedo-a054171a7/"
+              target={"_blank"}
+              rel="noreferrer"
+              className="logo"
+            >
+              <FaLinkedin size={50} />
+            </a>
           </div>
         </Offcanvas.Body>
       </Offcanvas>

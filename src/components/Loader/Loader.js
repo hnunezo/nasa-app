@@ -2,12 +2,7 @@ import React from "react";
 import "./loader.css";
 
 const Loader = () => {
-  return (
-    <div className="lds-ripple">
-      <div></div>
-      <div></div>
-    </div>
-  );
+  return <h2 class="animate">Loading</h2>;
 };
 
 export default Loader;
