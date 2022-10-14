@@ -203,3 +203,27 @@ p {
 .logo:hover {
   color: gray;
 }
+
+.animated-title {
+  animation-name: title-keyframe;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes title-keyframe {
+  0% {
+    opacity: 0.25;
+  }
+  25% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
