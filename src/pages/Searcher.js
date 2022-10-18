@@ -20,9 +20,7 @@ const Searcher = () => {
 
   return (
     <div className="container-general">
-      <section
-        style={{ display: "flex", flexWrap: "wrap", overflow: "hidden" }}
-      >
+      <section className="container-cards">
         {searched && search
           ? searched.slice(0, 32).map((el) => <Imgcard el={el} />)
           : null}

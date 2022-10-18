@@ -17,7 +17,7 @@ const Home = () => {
       <h1 className="animated-title d-flex mb-5">
         Imagination is more important than knowledge.
       </h1>
-      <div className="d-flex">
+      <div className="d-flex justify-content-center flex-wrap px-4">
         <div>
           <h2>Inspired</h2>
           <p>

@@ -22,9 +22,18 @@
 
 .borders {
   width: 90%;
+  height: 98%;
   background-color: rgba(0, 0, 0, 0.8);
   border: 3px solid white;
   border-radius: 15px;
+}
+.container-random {
+  margin-top: 3rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .container-media {
@@ -157,7 +166,7 @@ p {
     flex-direction: column;
   }
   .container-general {
-    top: 6rem;
+    justify-content: start;
   }
   .container-img {
     height: 100%;
@@ -174,16 +183,15 @@ p {
     text-align: center;
   }
 }
+@media (max-width: 768px) {
+  .container-general {
+    width: 90%;
+  }
+}
 
 @media (max-width: 600px) {
   .container-general {
     width: 100%;
-  }
-}
-@media (max-width: 768px) {
-  .container-general {
-    top: 19rem;
-    width: 90%;
   }
 }
 
@@ -206,6 +214,7 @@ p {
 }
 
 .animated-title {
+  text-align: center;
   animation-name: title-keyframe;
   animation-duration: 3s;
   animation-iteration-count: infinite;

@@ -37,15 +37,7 @@ const Random = () => {
   };
   return (
     <div className="container-general">
-      <div
-        style={{
-          width: "100%",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
+      <div className="container-random">
         <div className="borders">
           <h3 className="text-center container-title">{media.title}</h3>
           <div className="container-media">
