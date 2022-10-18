@@ -1,6 +1,4 @@
 .particles-container {
-  height: calc(100vh);
-  width: calc(96vw);
   position: relative;
   text-align: center;
   background-color: #252934;
