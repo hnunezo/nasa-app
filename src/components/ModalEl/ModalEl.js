@@ -1,4 +1,3 @@
-import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
 const ModalEl = (props) => {
@@ -29,7 +28,9 @@ const ModalEl = (props) => {
         <p>{props.selected.data[0].description}</p>
       </Modal.Body>
       <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
+        <button onClick={props.onHide} className="button-general">
+          Close
+        </button>
       </Modal.Footer>
     </Modal>
   );
