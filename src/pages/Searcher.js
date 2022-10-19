@@ -2,10 +2,13 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Form } from "react-bootstrap";
 import Imgcard from "../components/Imgcard/Imgcard";
+import ModalEl from "../components/ModalEl/ModalEl";
 
 const Searcher = () => {
   const [search, setSearch] = useState("");
   const [searched, setSearched] = useState([]);
+  const [selected, setSelected] = useState("");
+  const [modalShow, setModalShow] = useState(false);
 
   useEffect(() => {
     if (search) {
@@ -22,7 +25,16 @@ const Searcher = () => {
     <div className="container-general">
       <section className="container-cards">
         {searched && search
-          ? searched.slice(0, 32).map((el) => <Imgcard el={el} />)
+          ? searched
+              .slice(0, 32)
+              .map((el) => (
+                <Imgcard
+                  key={el.data[0].nasa_id}
+                  el={el}
+                  setSelected={setSelected}
+                  setModalShow={setModalShow}
+                />
+              ))
           : null}
       </section>
       <div className="searcher">
@@ -37,6 +49,13 @@ const Searcher = () => {
           </Form.Group>
         </Form>
       </div>
+      {selected ? (
+        <ModalEl
+          show={modalShow}
+          onHide={() => setModalShow(false)}
+          selected={selected}
+        />
+      ) : null}
     </div>
   );
 };
